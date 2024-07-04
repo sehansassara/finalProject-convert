@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="703.0" prefWidth="1328.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BatchEmployeeDetailFormController">
+   <children>
+      <Label layoutX="21.0" layoutY="31.0" text="Batch Employee Details">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblBatEmp" layoutX="162.0" layoutY="100.0" onMouseClicked="#tblBatEmpOnMouse" prefHeight="578.0" prefWidth="986.0" stylesheets="@../css/BatchIngre.css">
+        <columns>
+          <TableColumn fx:id="colBatId" prefWidth="498.0" text="BAT ID" />
+          <TableColumn fx:id="colEmpId" prefWidth="484.0" text="EMP ID" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-column" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+   </children>
+</AnchorPane>

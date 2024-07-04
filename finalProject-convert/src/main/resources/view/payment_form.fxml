@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="AnpPay" prefHeight="703.0" prefWidth="1328.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PaymentFormController">
+   <children>
+      <Label layoutX="14.0" layoutY="25.0" text="Payment">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <Text layoutX="150.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAY ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPayId" layoutX="150.0" layoutY="178.0" onAction="#txtSearchOnAction" onKeyReleased="#txtPayIdOnKeyReleased" prefHeight="29.0" prefWidth="223.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: black;" />
+      <Text layoutX="487.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAmount" layoutX="486.0" layoutY="178.0" onKeyReleased="#txtAmountOnKeyReleased" prefHeight="29.0" prefWidth="223.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: black;" />
+      <Text layoutX="150.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtDate" layoutX="150.0" layoutY="311.0" prefHeight="29.0" prefWidth="223.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: black;" />
+      <Text layoutX="486.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblPayment" layoutX="736.0" layoutY="77.0" onMouseClicked="#tblPayOnMouse" prefHeight="528.0" prefWidth="554.0" stylesheets="@../css/BatchIngre.css">
+        <columns>
+          <TableColumn fx:id="colPayId" prefWidth="92.79998779296875" text="PAY ID" />
+          <TableColumn fx:id="colAmount" prefWidth="119.199951171875" text="Amount" />
+            <TableColumn fx:id="colDate" prefWidth="121.60003662109375" text="Date" />
+            <TableColumn fx:id="colType" prefWidth="110.400146484375" text="Type" />
+            <TableColumn fx:id="colOrd" prefWidth="102.4000244140625" text="ORD ID" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-column" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="467.0" layoutY="642.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="97.0" styleClass="jfx-buttonSave" stylesheets="@../css/button.css" text="Save">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-plus-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="359.0" layoutY="642.0" onAction="#btnDeleteOnAction" prefHeight="33.0" prefWidth="97.0" styleClass="jfx-buttonDelete" stylesheets="@../css/button.css" text="Delete">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-delete-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="642.0" onAction="#btnUpdateOnAction" prefHeight="33.0" prefWidth="97.0" styleClass="jfx-buttonUpdate" stylesheets="@../css/button.css" text="Update">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-update-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="140.0" layoutY="642.0" onAction="#btnClearOnAction" prefHeight="33.0" prefWidth="97.0" styleClass="jfx-buttonClear" stylesheets="@../css/button.css" text="Clear">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-clear-90.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <ChoiceBox fx:id="choiceType" layoutX="486.0" layoutY="311.0" onDragDetected="#choiceTypeOnAction" prefHeight="29.0" prefWidth="223.0" />
+      <Text layoutX="222.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORD ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="comOrd" layoutX="149.0" layoutY="438.0" onKeyReleased="#filterOrderId" onMouseClicked="#orderIdMousedClick" prefHeight="29.0" prefWidth="223.0" />
+      <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="642.0" onAction="#btnBillOnAction" prefHeight="33.0" prefWidth="97.0" styleClass="jfx-buttonBill" stylesheets="@../css/button.css" text="Report">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-bill-94.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

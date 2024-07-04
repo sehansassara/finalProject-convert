@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="703.0" prefWidth="1328.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BatchCostFormController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Batch Cost">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Text layoutX="121.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BAT ID :" wrappingWidth="63.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="comBatId" focusColor="#5e6d9a" layoutX="121.0" layoutY="110.0" onAction="#ComBatIdOnAction" onKeyReleased="#filterBatId" onMouseClicked="#comBatIdOnMouseClicked" prefHeight="24.0" prefWidth="183.0" unFocusColor="BLACK" />
+      <Text layoutX="119.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type :" wrappingWidth="63.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="270.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Production Date :" wrappingWidth="134.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="518.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price :" wrappingWidth="95.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblProductionDate" layoutX="339.0" layoutY="227.0" />
+      <Label fx:id="lblBatchUnitPrice" layoutX="538.0" layoutY="226.0" />
+      <Label fx:id="lblBatchType" layoutX="141.0" layoutY="226.0" />
+      <Text layoutX="121.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ING ID :" wrappingWidth="63.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="comIngId" layoutX="121.0" layoutY="321.0" onAction="#comIngIdOnAction" onKeyReleased="#filterIngId" onMouseClicked="#comIngIdOnMouseClicked" prefHeight="24.0" prefWidth="183.0" />
+      <Text layoutX="125.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type :" wrappingWidth="63.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="298.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UnitPrice :" wrappingWidth="80.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="488.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity On Hand :" wrappingWidth="142.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblIngType" layoutX="146.0" layoutY="448.0" />
+      <Label fx:id="lblUnitPrice" layoutX="335.0" layoutY="447.0" />
+      <Label fx:id="lblQtyOnHand" layoutX="561.0" layoutY="447.0" />
+      <Text layoutX="674.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty :" wrappingWidth="41.7294921875">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtQty" layoutX="658.0" layoutY="427.0" onAction="#txtQtyOnAction" prefHeight="40.0" prefWidth="64.0" />
+      <TableView fx:id="tblCost" layoutX="777.0" layoutY="64.0" prefHeight="602.0" prefWidth="511.0" stylesheets="@../css/BatchIngre.css">
+        <columns>
+          <TableColumn fx:id="colBatId" prefWidth="69.5999755859375" text="BAT ID" />
+          <TableColumn fx:id="colIngId" prefWidth="70.39996337890625" text="ING ID" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="84.00006103515625" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="66.400146484375" text="Qty" />
+            <TableColumn fx:id="colTotal" prefWidth="104.7999267578125" text="Total" />
+            <TableColumn fx:id="colAction" prefWidth="109.5999755859375" text="Action" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-column" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+      <Label layoutX="33.0" layoutY="580.0" text="Total Cost :" textFill="#6b110e">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAddToTable" layoutX="615.0" layoutY="525.0" onAction="#btnAddToTableOnAction" prefHeight="29.0" prefWidth="135.0" styleClass="jfx-buttonBatch" stylesheets="@../css/button.css" text="Add to table">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-batch-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnPlaceCost" layoutX="615.0" layoutY="637.0" onAction="#btnPlaceCostOnAction" prefHeight="29.0" prefWidth="135.0" styleClass="jfx-buttonBatchCost" stylesheets="@../css/button.css" text="Place Cost">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-cost-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="lblTotalCost" layoutX="197.0" layoutY="585.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
